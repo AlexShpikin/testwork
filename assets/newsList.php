@@ -66,7 +66,7 @@ $last = $first + $limit;
 
 if($count > $limit){
 	echo json_encode(array_slice($newsList, $first, $last));
-	//echo $newsList);
+	
 }else{
 	echo json_encode(array_slice($newsList, $all-$count, $all));
 }

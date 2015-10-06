@@ -360,6 +360,7 @@ textarea {
   }
   section .section-left .section-left-inner .section-left-item .forms_ajax {
     display: block;
+    position: relative;
   }
   section .section-left .section-left-inner .section-left-item .forms_ajax span {
     color: red;

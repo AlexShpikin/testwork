@@ -4,7 +4,7 @@ jQuery.noConflict()(function($){
 				$(document).on('click', '.loadNews', function(e){
 					e.preventDefault();
 					e.stopPropagation();
-					var	url = 'assets/newsList.inc.php';
+					var	url = 'assets/newsList.php';
 					var data_count = $(this).attr('data');
 					$.ajax({
 					   	type: "GET",
@@ -34,6 +34,115 @@ jQuery.noConflict()(function($){
 					});
 				});	
 		}
+	})();
+	(function forms(){
+		var container = '.forms_ajax';
+		$(container).each(function(){
+			$(this).on('keyup', '.forms_ajax_input_required', function(e){
+				$('input.email').each(function(){
+						if($(this).val() != '') {
+							
+							var mail = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+							if(mail.test($(this).val())){
+								$(this).css({'border' : '1px solid #569b44'}).removeClass('required');
+			
+							} else {
+								$(this).addClass('required');
+							}
+						} else {
+							
+							$(this).addClass('required');
+						}
+				});
+				$('input.name').each(function(){
+						if($(this).val() != ''){
+							if($.isNumeric($(this).val())){
+								$(this).addClass('required');
+							}else{
+								if($(this).val().length > 2){
+									$(this).css({'border' : '1px solid #569b44'}).removeClass('required');
+								}
+								else{
+									$(this).addClass('required');
+								}
+							}
+						}else{
+							$(this).addClass('required');
+						}
+				});
+				$('input.phone').each(function(){
+						if($(this).val() != ''){
+							if($(this).val().length == 10){
+									$(this).css({'border' : '1px solid #569b44'}).removeClass('required');
+								}
+								else{
+									$(this).addClass('required');
+								}
+						}else{
+							$(this).addClass('required');
+						}
+				});
+				$('textarea.message').each(function(){
+						if($(this).val() != ''){
+							if($.isNumeric($(this).val())){
+								$(this).addClass('required');
+							}else{
+								if($(this).val().length > 2){
+									$(this).css({'border' : '1px solid #569b44'}).removeClass('required');
+								}
+								else{
+									$(this).addClass('required');
+								}
+							}
+						}else{
+							$(this).addClass('required');
+						}
+				});
+				if(($('input.phone').hasClass('required') == false ) || ($('input.email').hasClass('required') == false)){
+					$('input.phone').removeClass('required');
+					$('input.email').removeClass('required')
+				}
+				if($('.forms_ajax .forms_ajax_input_required').hasClass('required') == false){
+					$('.forms_ajax input[type="submit"]').prop('disabled', false);
+				}else{
+					$('.forms_ajax input[type="submit"]').prop('disabled', 'disabled');
+				}
+			});
+		});
+		
+		$(container).on('submit', 'form', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					var $form = $(this),
+						$container = $form.closest(container);
+						urlBase = 'assets/mail.php';
+						data = $form.serialize();
+					$container.addClass('loading');
+					$.ajax({
+						type: "post",
+						dataType : "html",
+						url: urlBase,
+						data: data,
+						cache: false,
+						success: function(response){
+							$('.form_overlay').show();
+							setTimeout(function() {
+								var message = $.parseJSON(response);
+								if(typeof message.msg === 'undefined')
+								  {
+								  	for(var i=0;i<message.fields.length;i++){
+								  		$('.forms_ajax_message').html(message.fields[i].error);
+								  	}
+								  }
+								else
+								  {$('.forms_ajax_message').html(message.msg);$('.forms_ajax form').hide()}
+								$('.form_overlay').hide();
+							}, 300);
+						},error:function(response){
+							   	console.log(response);
+						}
+					});
+		});
 	})();
 	(function fixedBlock(){
 		$(window).scroll(function () {
