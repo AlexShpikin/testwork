@@ -43,5 +43,15 @@ jQuery.noConflict()(function($){
 		   $('.section-right-inner').removeClass('fix');
 		  }
 		}); 
+	})();
+	(function scrollTo(){
+		$('.side-nav a').each(function(){
+			$(this).on('click', function(){
+				var target = $(this).attr('href').replace('#','');
+				$('html, body').animate({scrollTop: $('#'+target+'').offset().top}, 800);
+				return false;
+			});	
+		});
+		
 	})();		       			
 });
