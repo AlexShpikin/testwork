@@ -1,0 +1,186 @@
+html,
+body {
+  display: block;
+  width: 100%;
+  font-family: 'Arimo', sans-serif;
+  font-size: 15px;
+  color: #757575;
+  margin: 0;
+  padding: 0;
+  background: #f1f1f1;
+}
+a {
+  color: black;
+  text-decoration: none;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+a:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-family: 'Arimo', sans-serif;
+  color: #292929;
+}
+h3 {
+  font-size: 19px;
+}
+h4 {
+  font-size: 17px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.transition {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+input,
+textarea {
+  outline: none;
+}
+.clear {
+  clear: both;
+  content: "";
+  display: block;
+}
+section {
+  display: block;
+}
+section h1 {
+  font-size: 36px;
+  text-align: center;
+  padding: 30px 0;
+}
+section .section-left {
+  display: block;
+  padding: 0 15px;
+}
+section .section-left .section-left-inner .section-left-item {
+  display: block;
+  margin: 0 0 30px 0;
+  padding: 20px;
+  background: white;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+section .section-left .section-left-inner .section-left-item .section-left-item-newsList {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+section .section-left .section-left-inner .section-left-item .section-left-item-newsList li {
+  display: block;
+  padding: 25px 0;
+  border-bottom: 1px solid #ececec;
+}
+section .section-left .section-left-inner .section-left-item .section-left-item-newsList li h3 {
+  font-size: 21px;
+  margin: 0 0 15px 0;
+}
+section .section-left .section-left-inner .section-left-item .section-left-item-newsList li:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+section .section-left .section-left-inner .section-left-item .section-left-item-newsList li:last-child {
+  border-bottom: 0;
+}
+section .section-left .section-left-inner .section-left-item .loadNews {
+  margin: 50px 0 0;
+}
+section .section-left .section-left-inner .section-left-item:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+section .section-left h2 {
+  font-size: 24px;
+  margin: 0 0 30px 0;
+}
+section .section-right {
+  display: block;
+}
+section .section-right .section-right-inner {
+  display: block;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+section .section-right .section-right-inner .header_nav_show {
+  display: none;
+  width: 40px;
+  height: 40px;
+  float: right;
+  margin-bottom: 10px;
+  border: 1px solid #dddddd;
+  position: absolute;
+  right: 20px;
+  top: 55px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+section .section-right .section-right-inner .header_nav_show:hover:before,
+section .section-right .section-right-inner .header_nav_show:hover,
+section .section-right .section-right-inner .header_nav_show:hover:after {
+  border-color: black;
+}
+section .section-right .section-right-inner .header_nav_show:before {
+  border-top: 2px solid #888888;
+  border-bottom: 2px solid #888888;
+  height: 7px;
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  content: "";
+  bottom: 9px;
+}
+section .section-right .section-right-inner .header_nav_show:after {
+  border-top: 2px solid #888888;
+  border-bottom: 2px solid #888888;
+  height: 7px;
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  content: "";
+  top: 9px;
+}
+section .section-right .section-right-inner ul {
+  display: block !important;
+}
+section .section-right .section-right-inner ul li {
+  border-bottom: 1px solid #ececec;
+  margin: 0;
+}
+section .section-right .section-right-inner ul li a {
+  font-size: 17px;
+  color: black;
+}
+section .section-right .section-right-inner ul li:last-child {
+  border-bottom: 0;
+}
+.overlay_load {
+  display: block;
+  background: url(../img/bx_loader.gif) no-repeat 50% 50%;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  display: none;
+}
