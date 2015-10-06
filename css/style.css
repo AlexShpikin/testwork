@@ -267,6 +267,12 @@ section .section-right .section-right-inner ul li a {
 section .section-right .section-right-inner ul li:last-child {
   border-bottom: 0;
 }
+section .section-right .section-right-inner.fix {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 390px;
+}
 .overlay_load {
   display: block;
   background: url(../img/bx_loader.gif) no-repeat 50% 50%;

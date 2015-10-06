@@ -34,5 +34,14 @@ jQuery.noConflict()(function($){
 					});
 				});	
 		}
+	})();
+	(function fixedBlock(){
+		$(window).scroll(function () {
+		  if ($(this).scrollTop() > 100) {
+		   $('.section-right-inner').addClass('fix');
+		  } else {
+		   $('.section-right-inner').removeClass('fix');
+		  }
+		}); 
 	})();		       			
 });
